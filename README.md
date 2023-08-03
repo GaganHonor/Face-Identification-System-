@@ -31,9 +31,10 @@ Installation
 
 To install and run Face Recognition System, you need to have Python 3 and OpenCV installed on your computer. You also need to install the face_recognition library, which is a wrapper for the dlib library that provides face detection and recognition features. To install these dependencies, you can use the following commands:
 ````bash
-pip install opencv-python
-conda install -c conda-forge dlib
-pip install face_recognition
+pip install -r requirements.txt
+pip install opencv-python flask numpy pillow
+pip install flask opencv-python numpy
+python app.py
 ````
 You also need to clone this repository or download the source code as a ZIP file. To clone the repository, you can use the following command:
 ````bash
