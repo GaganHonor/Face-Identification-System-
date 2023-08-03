@@ -42,11 +42,12 @@ git clone https://github.com/GaganHonor/Face-Identification-System-
 
 ## Screenshots
 Here are some screenshots of Face Recognition System in action:
-![Screenshot 1]
-![Screenshot 2]
-![Screenshot 3]
-![Screenshot 4]
-![Screenshot 5]
+
+
+
+<img src="readmeimg/Screenshot 2023-08-03 161338.jpg" alt="Screenshot 1" class="image">
+<img src="readmeimg/Screenshot 2023-08-03 161407.jpg" alt="Screenshot 2" class="image">
+
 CodeFace Recognition System uses OpenCV and face_recognition libraries to perform face detection and recognition tasks. Here is a brief explanation of how they work:
 - OpenCV is an open source computer vision library that provides various functions and algorithms for image processing, video analysis, object detection, face recognition, etc.
 - face_recognition is a Python library that wraps around dlib's state-of-the-art face recognition algorithms. It uses a deep learning model called ResNet-34 with 99.4% accuracy on Labeled Faces in The Wild (LFW) benchmark.
