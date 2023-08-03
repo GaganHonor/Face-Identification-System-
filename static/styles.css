@@ -1,0 +1,66 @@
+body {
+  background-color: #efefef;
+  font-family: arial, sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 50px;
+}
+
+.video-container {
+  width: 60%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+#videoElement {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.faces-container {
+  width: 30%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  margin-left: 20px;
+}
+
+
+#startButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.face-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+.face-item .face-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.face-item .face-name {
+  font-weight: bold;
+}
+
+
+  
+  
+  
