@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Face Recognition</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="auth-container" id="authContainer">
+        <h2>Authentication Required</h2>
+        <div id="authStatus"></div>
+        <button id="captureButton">Capture</button>
+        <button id="checkAccessButton">Check Access</button>
+      </div>
+      <div class="video-container">
+        <img id="videoElement" src="{{ url_for('video_feed') }}" />
+      </div>
+      <div class="faces-container" id="facesList">
+        <!-- Faces will be appended here by JavaScript -->
+      </div>
+    </div>
+    <script>
+      function fetchFaces() {
+        fetch('/faces')
+          .then(response => response.json())
+          .then(data => {
+            var facesList = document.getElementById('facesList');
+            facesList.innerHTML = '';
+            data['faces'].forEach(face => {
+              var listItem = document.createElement('li');
+              listItem.textContent = face;
+              facesList.appendChild(listItem);
+            });
+          });
+      }
+
+      setInterval(fetchFaces, 5000); // Fetch the faces every 5 seconds
+
+      const authContainer = document.getElementById('authContainer');
+      const authStatus = document.getElementById('authStatus');
+      const captureButton = document.getElementById('captureButton');
+      const checkAccessButton = document.getElementById('checkAccessButton');
+
+      captureButton.addEventListener('click', function() {
+        fetch('/capture_reference_image')
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'success') {
+              authStatus.textContent = 'Reference image captured successfully.';
+            } else {
+              authStatus.textContent = 'Failed to capture reference image.';
+            }
+          });
+      });
+
+      checkAccessButton.addEventListener('click', function() {
+        fetch('/check_access')
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'success') {
+              authContainer.style.display = 'none';
+            } else {
+              authStatus.textContent = 'Unauthorized access!';
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
