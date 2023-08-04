@@ -1,5 +1,6 @@
 # Face-Identification-System-
-Face Recognition System 
+Face Recognition System by @GaganHonor 
+🤖
 
 <p align="center">
   <a href="https://www.python.org">
